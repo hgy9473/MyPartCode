@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Page Sample</title>
+    <style>
+        button {
+            border: 1px solid #ccc;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            position: relative;
+            top: 100px;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .box{
+            text-align:center;
+            background-color: #eee;
+        }
+
+        .unitbox {
+            overflow: hidden;
+            height:104px;
+            width:200px;
+            display: inline-block;
+            background-color: #ddd;
+        }
+
+        .unit {
+            text-align: center;
+            width: 186px;
+            height: calc(100% - 8px);
+            border: 1px solid bisque;
+            margin:2px;
+        }
+
+        .pages span{
+            background-color:black;
+            display: inline-block;
+            height:20px;
+            width:20px;
+            border-radius: 10px;
+            color:white;
+            margin:5px;
+            cursor: pointer;
+        }
+
+        .pages span:hover{
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        var dat = ['test', 'demo', 'try', 'tt', 'temp'];
+
+        function pageC(e){
+            if(e.target.nodeName === 'DIV'){
+                return;
+            }
+            var k = Number(e.target.textContent);
+            
+            if(k){
+                var res = get_res(k-1);
+                document.getElementById("unitbox").innerHTML = res;
+            }
+           
+        }
+
+        function test() {
+            var cnt = 0;
+            
+            var res = get_res(0);
+            var pages = ""
+            for (var k in dat) {
+                cnt++;
+                pages += "<span>"+cnt+"</span>";
+            }
+           
+            document.getElementById("unitbox").innerHTML = res;
+            document.getElementById("pages").innerHTML = pages;
+
+        }
+
+        function get_res(k){
+            var res = "";
+            res += "<div class='unit'>";
+            res += "<h3>" + dat[k] + "</h3>";
+            res += "<p>"+Math.random()*10000000000000+"</p>";
+            res += "</div>";
+
+            return res;
+        }
+    </script>
+</head>
+
+<body>
+    <div id='box' class='box'>
+            <div class='unitbox' id='unitbox'></div>
+            <div class='pages' id='pages' onclick='pageC(event)'></div>
+    </div>
+
+    <button onclick="test()">测试</button>
+</body>
+
+</html>
