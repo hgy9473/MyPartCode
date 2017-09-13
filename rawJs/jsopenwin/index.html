@@ -1,61 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>打开窗口测试</title>
     <style type="text/css">
-        .box{
-            width:600px;
+        .box {
+            width: 800px;
             margin: 0 auto;
         }
-
     </style>
     <script type="text/javascript">
-
-        function open1(){
+        function open1() {
             window.open("http://ditu.amap.com");
         }
 
-        function open2(){
-            window.open("http://ditu.amap.com","_self");
+        function open2() {
+            window.open("http://ditu.amap.com", "_self");
         }
 
-        function open3(){
-            window.open("http://ditu.amap.com","_blank");
+        function open3() {
+            window.open("http://ditu.amap.com", "_blank");
         }
-        
-        function open4(){
+
+        function open4() {
             alert("window.open(\"http://ditu.amap.com\",\"\"\)");
-            window.open("http://ditu.amap.com","");
+            window.open("http://ditu.amap.com", "");
         }
 
-        function open5(){
-            window.open("http://ditu.amap.com","","width=400,height=400");
+        function open5() {
+            window.open("http://ditu.amap.com", "", "width=400,height=400");
         }
 
-        function open6(){
-            window.open("http://ditu.amap.com","_self","width=400,height=400");
+        function open6() {
+            window.open("http://ditu.amap.com", "_self", "width=400,height=400");
         }
     </script>
+    <link href="../../js/prism/prism.css" rel="stylesheet">
+    
 </head>
+
 <body>
-<div class='box'>
-<h3>window.open(URL,name,specs,replace)</h3>
-<p>参考资料：https://www.w3cschool.cn/jsref/met-win-open.html</p>
-    <p>window.open("http://ditu.amap.com")</p>
-    <button onclick="open1()">打开窗口1</button>
-    <p>window.open("http://ditu.amap.com","_self")</p>
-    <button onclick="open2()">打开窗口2</button>
-    <p>window.open("http://ditu.amap.com","_blank")</p>
-    <button onclick="open3()">打开窗口3</button>
-    <p>window.open("http://ditu.amap.com","");</p>
-    <button onclick="open4()">打开窗口4</button>
-    <p>window.open("http://ditu.amap.com","","width=400,height=400,left=200,top=200")</p>
-    <button onclick="open5()">打开窗口5</button>
-    <p>window.open("http://ditu.amap.com","_self","width=400,height=400")</p>
-    <button onclick="open6()">打开窗口6</button>
-</div>
+    <div class='box'>
+        <h3>window.open(URL,name,specs,replace)</h3>
+        <p>参考资料：https://www.w3cschool.cn/jsref/met-win-open.html</p>
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com")
+        </code></pre>
+        <button onclick="open1()">打开窗口1</button>
+        
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com","_self")
+        </code></pre>
+        <button onclick="open2()">打开窗口2</button>
+        
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com","_blank")
+        </code></pre>
+        <button onclick="open3()">打开窗口3</button>
+        
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com","");
+        </code></pre>
+        <button onclick="open4()">打开窗口4</button>
+        
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com","","width=400,height=400,left=200,top=200")</p>
+        </code></pre>
+        <button onclick="open5()">打开窗口5</button>
+        
+
+        <pre><code class="language-javascript">
+            window.open("http://ditu.amap.com","_self","width=400,height=400")
+        </code></pre>
+        <button onclick="open6()">打开窗口6</button>
+
+    </div>
+
+    <script src="../../js/prism/prism.js"></script>
 </body>
+
 </html>
