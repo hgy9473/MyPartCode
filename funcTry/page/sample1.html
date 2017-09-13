@@ -44,16 +44,23 @@
             display: inline-block;
             height:20px;
             width:20px;
-            border-radius: 10px;
+            border-radius: 5px;
             color:white;
             margin:5px;
             cursor: pointer;
+            text-align: center;
         }
 
         .pages span:hover{
             font-weight: bold;
         }
+
+        #pages>.showing{
+            border:2px solid #06ABBE;
+            background-color:#06ABBE;
+        }
     </style>
+    <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
     <script>
         var dat = ['test', 'demo', 'try', 'tt', 'temp'];
 
@@ -61,6 +68,8 @@
             if(e.target.nodeName === 'DIV'){
                 return;
             }
+            $("#pages>span").removeClass("showing");
+            $(e.target).addClass("showing");
             var k = Number(e.target.textContent);
             
             if(k){
