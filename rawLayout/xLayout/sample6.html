@@ -1,4 +1,4 @@
-<!-- float让父元素坍塌 -->
+<!-- 解决float坍塌：--父元素overflow:hidden -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +23,10 @@
     </style>
 </head>
 <body>
-    <div class="row">
+    <div class="row" style="overflow:hidden;">
        <div class="col">col1</div>
        <div class="col">col2</div>
-       <div class="col">col3</div>      
+       <div class="col">col3</div>
     </div>
     <p>没有了世界的世界</p>
 </body>
