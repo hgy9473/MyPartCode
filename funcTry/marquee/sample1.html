@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字滚动marqueeJS</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./external/2hjquery.marquee.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#marquee").marquee({ yScroll: "bottom" });
+    });
+    </script>
+    <style type="text/css">
+    
+
+    .marquee {
+        display: block;
+        line-height: 1;
+        position: relative;
+        overflow: hidden;
+        width: 980px;
+        height: 22px;
+        border: 1px dotted #d3d3d3;
+        background: #f7f7f7
+    }
+
+    .marqueeli{
+        position: absolute;
+        top: -999em;
+        left: 0;
+        display: block;
+        line-height: 20px;
+        padding: 3px 5px;
+        white-space: nowrap;
+        text-indent: 0.8em;
+    }
+    </style>
+    
+</head>
+
+<body>
+            <!-- <ul id="marquee" class="marquee">
+                <li class='marqueeli'><a href="http://www.helloweba.com/view-blog-43.html" target="_blank"> 
+                    1DIV+CSS网页布局对网站搜索引擎优化的影响</a> [2010-08-20]</li>
+                <li class='marqueeli'><a href="http://www.helloweba.com/view-blog-42.html" target="_blank"> 
+                    2jFlow：jQuery内容滑动特效插件的应用</a> [2010-08-17]</li>
+                <li class='marqueeli'><a href="http://www.helloweba.com/view-blog-41.html" target="_blank"> 
+                    3Open Flash Chart + PHP + Mysql生成动态图表</a> [2010-08-16]</li>
+            </ul> -->
+            
+            <ul id="marquee" style="display:block;line-height:1;position:relative;overflow:hidden;width:500px;height:22px;">
+                <li style="position:absolute;top:-999em;left:0;display:block;line-height:20px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;"><a href="http://www.helloweba.com/view-blog-43.html" target="_blank"> 
+                    1DIV+CSS网页布局对网站搜索引擎优化的影响</a> [2010-08-20]</li>
+                <li style="position:absolute;top:-999em;left:0;display:block;line-height:20px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;"><a href="http://www.helloweba.com/view-blog-42.html" target="_blank"> 
+                    2jFlow：jQuery内容滑动特效插件的应用</a> [2010-08-17]</li>
+                <li style="position:absolute;top:-999em;left:0;display:block;line-height:20px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;"><a href="http://www.helloweba.com/view-blog-41.html" target="_blank"> 
+                    3Open Flash Chart + PHP + Mysql生成动态图表</a> [2010-08-16]</li>
+            </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字滚动marqueeJS</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./external/2hjquery.marquee.js"></script>
+   
+    <script type="text/javascript">
+        $(function(){
+            $("#navBar").html('<div style="width: 900px;margin:0px auto;">'+
+                    '<ul id="marquee" class="marquee" style="display:block;line-height:1;position:relative;overflow:hidden;width:500px;height:40px;">'+
+                        '<li style="position:absolute;top:-999em;left:0;display:block;line-height:30px;height:30px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;">1一天两天三天四五六七天</li>'+
+                        '<li style="position:absolute;top:-999em;left:0;display:block;line-height:30px;height:30px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;">2八百年为秋</li>'+
+                        '<li style="position:absolute;top:-999em;left:0;display:block;line-height:30px;height:30px;padding:3px 5px;white-space:nowrap;text-indent: 0.8em;">3haishengshengmingyue</li>'+
+                    '</ul>'+
+                '</div>')
+             $("#marquee").css({'background':'blue'});
+             $("#marquee").marquee({ yScroll: "bottom" });
+             console.log($("#marquee > li"));
+        })
+    </script>
+</head>
+
+<body>
+            
+            <div id="navBar" style="font-size: 24px;">
+                
+            </div>
+                            
+       
+</body>
+
+</html>
