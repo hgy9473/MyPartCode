@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xLayout1</title>
+    <style>
+        .row{
+            background:#000;
+            color:white;
+        }
+
+        .col{
+            border:2px solid blue;
+            height:100px;
+            width:100px;
+            float: left;
+            margin:2px;
+        }
+
+        .clearfix:after{
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+       <div class="col">col1</div>
+       <div class="col">col2</div>
+       <div class="col clearfix">col3</div>      
+    </div>
+</body>
+</html>
