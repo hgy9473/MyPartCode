@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字滚动marqueeJS</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .box{
+            background: #ccc;
+        }
+
+        .box li{
+            margin:5px 0px;
+        }
+
+        li:nth-child(even){
+            background: blue;
+        }
+    </style>
+   
+    <script type="text/javascript">
+        $(function(){
+            var t = $("#marquee");
+            console.log('$ #',t);
+
+            $(document).keydown(function(e){
+                if(e.ctrlKey){
+                    console.log("...");
+                    upli();
+                }
+            });
+
+
+        });
+
+        function upli(){
+            $("#marquee").append($("#marquee > li")[0]);
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul id='marquee'>
+            <li>11江南大雪青云藏</li>
+            <li>22江南大雪青云藏</li>
+            <li>33江南大雪青云藏</li>
+        </ul>
+    </div>
+</body>
+</html>
