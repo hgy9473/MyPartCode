@@ -1,0 +1,19 @@
+/*
+desc : 常用CSS样式收集
+author : hgy
+*/
+
+/*文字居中*/
+.center{
+	text-align: center;
+}
+
+/*文字左对齐*/
+.left{
+	text-align:left;
+}
+
+/*文字右对齐*/
+.right{
+	text-align:right;
+}
