@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字滚动marqueeJS</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .box{
+            border:1px solid #ddd;
+        }
+
+        .box > ul{
+            overflow: hidden;
+        }
+
+        .box li,.hideli{
+            margin:5px 0px;
+        }
+
+        li:nth-child(1){
+            background: white;
+            display: block;
+        }
+
+        li:not(:first-child){
+            display:none;
+        }
+    </style>
+   
+    <script type="text/javascript">
+        $(function(){
+           $("*").keydown(function(e){
+                if(e.ctrlKey){
+                    upli();
+                }
+            });
+        });
+
+        function upli(){
+            // $($("#marquee > li")[0]).slideUp("slow",function(){
+            //     $("#marquee").append(this);
+            //     $($("#marquee > li")[0]).show('slow');
+            // });
+            var height = -1*$($("#marquee > li")[0]).height();
+
+            $($("#marquee > li")[0]).animate({ 
+                marginTop:height
+            }, 600 ,'swing',function(){
+                $("#marquee").append(this);
+                $("#marquee>li:last-child").css({"margin-top":""});
+            });
+
+        }
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Mcss.css">
+</head>
+<body>
+    <h2 class="center">模拟文字滚动测试3 - 按Ctrl滑动文字</h2>
+    <div class="box">
+        <ul id='marquee'>
+            <li>1江南大雪青云藏</li>
+            <li>2洛阳亲友如想问</li>
+            <li>3大胆狂徒哪里走</li>
+        </ul>
+    </div>
+</body>
+</html>
