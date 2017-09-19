@@ -6,15 +6,19 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .box{
-            background: #ccc;
+            border:1px solid #ddd;
         }
 
         .box li{
             margin:5px 0px;
         }
 
-        li:nth-child(even){
-            background: blue;
+        li:nth-child(1){
+            background: white;
+        }
+
+        li:not(:first-child){
+            display:none;
         }
     </style>
    
@@ -23,30 +27,28 @@
             var t = $("#marquee");
             console.log('$ #',t);
 
-            $(document).keydown(function(e){
+            $("*").keydown(function(e){
                 if(e.ctrlKey){
                     console.log("...");
                     upli();
                 }
             });
-
-
         });
 
         function upli(){
             $("#marquee").append($("#marquee > li")[0]);
         }
 
-        
-
     </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Mcss.css">
 </head>
 <body>
+    <h2 class="center">模拟文字滚动测试1 - 按Ctrl切换文字</h2>
     <div class="box">
         <ul id='marquee'>
-            <li>11江南大雪青云藏</li>
-            <li>22江南大雪青云藏</li>
-            <li>33江南大雪青云藏</li>
+            <li>1江南大雪青云藏</li>
+            <li>2洛阳亲友如想问</li>
+            <li>3大胆狂徒哪里走</li>
         </ul>
     </div>
 </body>
