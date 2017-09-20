@@ -7,10 +7,12 @@
     <style>
         .box{
             border:1px solid #ddd;
+            text-align: center;
         }
 
         .box > ul{
             overflow: hidden;
+            display: inline-block;
         }
 
         .box li,.hideli{
@@ -29,27 +31,33 @@
    
     <script type="text/javascript">
         $(function(){
-           $("*").keydown(function(e){
-                if(e.ctrlKey){
-                    upli();
-                }
-            });
+           setInterval(upli,2000);
         });
 
         function upli(){
-            // $($("#marquee > li")[0]).slideUp("slow",function(){
-            //     $("#marquee").append(this);
-            //     $($("#marquee > li")[0]).show('slow');
-            // });
-            var height = -1*$($("#marquee > li")[0]).height();
+            if(!$("#marquee > li")[1]){//如果只有一条记录，不滚动
+                    return;
+            }
+            //固定高度
+            $("#marquee").height($("#marquee").height());
+            //获取参数
+            var height = $($("#marquee > li")[0]).height();
+            var marginTop = $($("#marquee > li")[0]).css('margin-top');
 
-            $($("#marquee > li")[0]).animate({ 
-                marginTop:height
-            }, 600 ,'swing',function(){
-                $("#marquee").append(this);
-                $("#marquee>li:last-child").css({"margin-top":""});
+            //开始移动
+            $($("#marquee > li")[0]).animate({
+                marginTop:-1*height,
+            }, 800 ,'linear',function(){//第一行上滑
+
+                $($("#marquee > li")[1]).css({'margin-top':height});//先让第二行下降
+                $("#marquee").append(this);//移动第一行
+                
+                $($("#marquee > li")[0]).animate({//第二行上升
+                        marginTop:marginTop
+                }, 800);
+
+                $("#marquee>li:last-child").css({"margin-top":""});//重置
             });
-
         }
 
     </script>
@@ -59,9 +67,9 @@
     <h2 class="center">模拟文字滚动测试3 - 按Ctrl滑动文字</h2>
     <div class="box">
         <ul id='marquee'>
-            <li>1江南大雪青云藏</li>
-            <li>2洛阳亲友如想问</li>
-            <li>3大胆狂徒哪里走</li>
+            <li>1江南大雪青云藏+++</li>
+            <li>2洛阳亲友如想问.....................</li>
+            <li>3大胆狂徒哪里走-------</li>
         </ul>
     </div>
 </body>
