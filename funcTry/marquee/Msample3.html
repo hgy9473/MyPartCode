@@ -31,7 +31,15 @@
    
     <script type="text/javascript">
         $(function(){
-           setInterval(upli,2000);
+           var timer = setInterval(upli,2000);
+
+            $("#marquee").hover(function(){//鼠标悬停时暂停滚动
+                clearInterval(timer);
+            },function(){
+                upli();
+                timer = setInterval(upli,2000);
+            });
+
         });
 
         function upli(){
@@ -47,14 +55,14 @@
             //开始移动
             $($("#marquee > li")[0]).animate({
                 marginTop:-1*height,
-            }, 800 ,'linear',function(){//第一行上滑
+            }, 700 ,'linear',function(){//第一行上滑
 
                 $($("#marquee > li")[1]).css({'margin-top':height});//先让第二行下降
                 $("#marquee").append(this);//移动第一行
                 
                 $($("#marquee > li")[0]).animate({//第二行上升
                         marginTop:marginTop
-                }, 800);
+                }, 300);
 
                 $("#marquee>li:last-child").css({"margin-top":""});//重置
             });
@@ -64,7 +72,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/Mcss.css">
 </head>
 <body>
-    <h2 class="center">模拟文字滚动测试3 - 按Ctrl滑动文字</h2>
+    <h2 class="center">模拟文字滚动测试3 - 定时滑动文字</h2>
     <div class="box">
         <ul id='marquee'>
             <li>1江南大雪青云藏+++</li>
