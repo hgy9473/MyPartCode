@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字滚动marqueeJS</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    .box {
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    #marquee {
+        overflow: hidden;
+        display: inline-block;
+        text-align: left;
+    }
+
+    #marquee > li{
+        margin: 0px;
+    }
+
+    #marquee > li:nth-child(1) {
+        background: white;
+        display: block;
+    }
+
+    #marquee > li:not(:first-child) {
+        display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    $(function() {
+        $("#marquee").marquee();
+    });
+
+
+    $.fn.marquee = function() {
+        var _marquee = this;
+        var timer = setInterval(upli, 2000);
+        //固定宽度
+        maxWidth(_marquee);
+        //固定高度
+        _marquee.height(_marquee.height());
+
+        _marquee.hover(function() { //鼠标悬停时暂停滚动
+            clearInterval(timer);
+        }, function() {
+            timer = setInterval(upli, 2000);
+        });
+
+
+        function upli() {
+
+            if (!_marquee.find(">li")[1]) { //如果只有一条记录，不滚动
+                return;
+            }
+            
+            //获取参数
+            var height = $(_marquee.find(">li")[0]).height();
+            var marginTop = $(_marquee.find(">li")[0]).css('margin-top');
+
+            console.log('...main..args:',height,marginTop);
+
+            //开始移动
+            $(_marquee.find(">li")[0]).animate({
+                marginTop: -1 * height,
+            }, 700, 'linear', function() { //第一行上滑
+
+                $(_marquee.find(">li")[1]).css({ 'margin-top': height }); //先让第二行下降
+                _marquee.append(this); //移动第一行
+
+                $(_marquee.find(">li")[0]).animate({ //第二行上升
+                    marginTop: marginTop
+                }, 300);
+
+                _marquee.find(">li:last-child").css({ "margin-top": "" }); //重置
+            });
+        }
+
+        //设置元素宽度为子元素的最大宽度
+        function maxWidth(parentN) {
+            //处理参数出错的情况
+            if (!parentN && typeof(parentN) != 'object') {
+                return;
+            }
+            //当元素存在子元素时
+            if (parentN.find(">*") && parentN.find(">*").length > 0) {
+                var childs = parentN.find(">*");
+                var maxWidth = 0;
+                for (var i = 0; i < childs.length; i++) {
+                    if (maxWidth < $(childs[i]).width()) {
+                        maxWidth = $(childs[i]).width();
+                    }
+                }
+                parentN.width(maxWidth);
+            } else {
+                return;
+            }
+        }
+    }
+    </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Mcss.css">
+</head>
+
+<body>
+    <h2 class="center">模拟文字滚动测试3 - 定时滑动文字</h2>
+    <div class="box">
+        <ul id='marquee'>
+            <li>1江南大雪青云藏+++</li>
+            <li>2洛阳亲友如想问.....................</li>
+            <li>3大胆狂徒哪里走-------</li>
+        </ul>
+    </div>
+</body>
+
+</html>
