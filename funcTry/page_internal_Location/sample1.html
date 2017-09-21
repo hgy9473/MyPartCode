@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>网页内部上下精确翻页</title>
+	<style type="text/css">
+		html,body{
+			height:100%;
+		}
+
+		*{
+			margin:0px;
+			padding:0px;
+		}
+
+		.floor{
+			height: 50%;
+		}
+
+		.floor1{
+			background: #eee;
+		}
+
+		.floor2{
+			background: #F19F9F;
+		}
+
+		.floor3{
+			background: #ccc;
+		}
+
+		.floor4{
+			background: #14C6DC;
+		}
+
+		.floor5{
+			background: #aaa;
+		}
+
+		#nav>a{
+			display: block;
+			width:20px;
+			height:20px;
+			margin:10px;
+			border-radius: 10px;
+		}
+
+		#nav>a:hover{
+			background:#8b4513 !important;
+			width:24px;
+		}
+
+		#nav{
+			width:32px;
+			position: fixed;
+			z-index: 1000000001;
+			top:calc(50% - 50px);
+			right:0px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="floor floor1" id="page1">
+		
+	</div>
+	<div class="floor floor2">
+		
+	</div>
+	<div class="floor floor3" id="page2">
+		
+	</div>
+	<div class="floor floor4">
+		
+	</div>
+	<div class="floor floor5" id="page3">
+		
+	</div>
+
+	<nav id="nav">
+		<a href="#page1" style="background:#181a27"></a>
+		<a href="#page2" style="background:#e88565"></a>
+		<a href="#page3" style="background:#1fc8a9"></a>
+	</nav>
+</body>
+</html>
