@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮播1</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+
+		html,body{
+			height:100%;
+			width:100%;
+		}
+		.h-container{
+			height:100%;
+			width:100%;
+		}
+
+		.tabnav{
+			height:40px;
+			width:100%;
+			background:#dfdfdf;/**/
+			border-radius: 5px;
+		}
+
+		.tabnav > .btn{
+			height:100%;
+			line-height: 30px;
+			margin:5px 10px;
+			border:none;
+			height:30px;
+			border-radius: 5px;
+			display: inline-block;
+			padding:0px 5px;
+			cursor:pointer;
+		}
+
+		.tabnav > .btn:hover{
+			background:#000;
+			color:white;
+		}
+
+		.choosed{
+			background:#000;
+			color:white;
+		}
+
+		.tabbox{
+			position: relative;
+			width:100%;
+			height:calc(100% - 40px);
+			overflow: hidden;
+			background:#efefef;/**/
+		}
+
+		.tab{
+			position:absolute;
+			height:100%;
+			width:100%;
+			top:0px;
+			left:0px;
+		}
+
+		.tab1{
+			background: blue;/**/
+		}
+
+		.tab2{
+			background: skyblue;/**/
+		}
+
+		.tabshow{
+
+		}
+
+		.tabhide{
+			display: none;
+		}
+
+
+
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#tabnav").click(function(e){
+				if(e.target.id == 'map1'){
+					if($(".tab1").hasClass("tabshow")){
+						return;
+					}
+
+					//修改按钮样式
+					$(".btn").removeClass("choosed");
+					$(e.target).addClass("choosed");
+
+					//获取上一个节点及其宽度
+					var preNode = $(".tabshow");
+					var width = preNode.width();
+
+					//上一个节点向后移动
+					preNode.appendTo(".tabbox");//DOM移动
+					preNode.animate({//右移动画
+						left:width
+					},800,function(){
+						preNode.removeClass("tabshow").addClass("tabhide");//设置样式
+					});
+
+					//获取下一个节点
+					var nextNode = $(".tab1");
+					//下一个节点先左移再设置样式
+					nextNode.css({"left":-1*width}).removeClass("tabhide").addClass("tabshow");
+					//下一个节点右移
+					nextNode.animate({
+						left:0
+					},800);
+
+					
+					
+
+				}else if(e.target.id == 'map2'){
+					if($("tab2").hasClass("tabshow")){
+						return;
+					}
+
+					//修改按钮样式
+					$(".btn").removeClass("choosed");
+					$(e.target).addClass("choosed");
+
+					//获取上一个节点及其宽度
+					var preNode = $(".tabshow");
+					var width = preNode.width();
+
+					//上一个节点向后移动
+					preNode.appendTo(".tabbox");//DOM移动
+					preNode.animate({//右移动画
+						left:width
+					},800,function(){
+						preNode.removeClass("tabshow").addClass("tabhide");//设置样式
+					});
+
+					//获取下一个节点
+					var nextNode = $(".tab2");
+					//下一个节点先左移再设置样式
+					nextNode
+					.css({"left":-1*width})
+					.removeClass("tabhide")
+					.addClass("tabshow");
+					//下一个节点右移
+					nextNode.animate({
+						left:0
+					},800);
+					
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="h-container" id="page1">
+    <nav class="tabnav" id="tabnav">
+        <div class="btn choosed" id="map1">设施分布</div>
+        <div class="btn" id="map2">遥感图</div>
+    </nav>
+    <div class="tabbox">
+        <div class="tab tab1 tabshow"></div>
+        <div class="tab tab2 tabhide">
+            <div class="img-box" id="Mapimg">
+            	imgBox
+            </div>
+            <div class="text-box">
+                text-box
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
