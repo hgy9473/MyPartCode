@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮播1</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+
+		html,body{
+			height:100%;
+			width:100%;
+		}
+		.h-container{
+			height:100%;
+			width:100%;
+		}
+
+		.tabnav{
+			height:30px;
+			width:100%;
+			background:#dfdfdf;
+			border-radius: 5px;
+		}
+
+		.tabnav > .btn{
+			height:100%;
+			line-height: 30px;
+			margin:0px 5px;
+			border:none;
+			border-radius: 5px;
+			display: inline-block;
+			padding:0px 5px;
+			cursor:pointer;
+		}
+
+		.tabnav > .btn:hover{
+			background:#000;
+			color:white;
+		}
+
+		.tabbox{
+			width:100%;
+			height:calc(100% - 30px);
+			background:#efefef;/**/
+		}
+
+		.tab{
+			height:100%;
+			width:100%;
+			top:0px;
+			float:left;
+		}
+
+		.tab1{
+			background: blue;/**/
+		}
+
+		.tab2{
+			background: skyblue;/**/
+		}
+
+		.clearfix:after{
+			content:"";
+			display: table;
+			clear:both;
+		}
+
+		.tabshow{
+
+		}
+
+		.tabhide{
+			display: none;
+		}
+
+
+
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#tabnav").click(function(e){
+				if(e.target.id == 'map1'){
+					if($(".tab1").hasClass("tabshow")){
+						return;
+					}
+
+					$(".tabshow").hide('slow',function(){
+						$(".tab").removeClass("tabshow");
+						$(".tab1").addClass("tabshow").show('slow');
+					});
+					
+
+				}else if(e.target.id == 'map2'){
+					if($("tab2").hasClass("tabshow")){
+						return;
+					}
+
+					$(".tabshow").hide('slow',function(){
+						console.log('000');
+						$(".tab").removeClass("tabshow");
+						$(".tab2").addClass("tabshow").show('slow');
+					});
+					
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="h-container" id="page1">
+    <nav class="tabnav" id="tabnav">
+        <div class="btn" id="map1">设施分布</div>
+        <div class="btn" id="map2">遥感图</div>
+    </nav>
+    <div class="tabbox clearfix">
+        <div class="tab tab1 tabshow"></div>
+        <div class="tab tab2 tabhide">
+            <div class="img-box" id="Mapimg">
+            	imgBox
+            </div>
+            <div class="text-box">
+                text-box
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
