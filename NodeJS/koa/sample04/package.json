@@ -1,0 +1,17 @@
+{
+  "name": "sample04",
+  "version": "1.0.0",
+  "description": "test nunjucks",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "keywords": [
+    "nunjucks"
+  ],
+  "author": "hgy",
+  "license": "ISC",
+  "dependencies": {
+    "nunjucks": "2.4.2"
+  }
+}
