@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>基础信息</title>
+    <style type="text/css">
+
+        *{
+            padding:0px;
+            margin:0px;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        
+
+    </style>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=bQqns4PVUnIQGRY3kisXsvRCFSzbXMR9"></script>
+</head>
+
+<body>
+<div id="map">
+
+</div>
+
+<script>
+    var map = new BMap.Map('map',{
+        enableMapClick:false//禁用poi图标单击
+    });
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.enableScrollWheelZoom();//启用滚轮放大缩小
+    map.centerAndZoom(new BMap.Point(114.056314,22.592643), 13);
+</script>
+</body>
+
+</html>
