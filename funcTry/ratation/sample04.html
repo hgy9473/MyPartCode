@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layui</title>
+  <link rel="stylesheet" href="../../js/layui2.1.5/css/layui.css"  media="all">
+  <style type="text/css">
+    body{
+      padding-top:100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .pics-box>div{
+      text-align: center;
+    }
+
+    #pics
+  </style>
+</head>
+<body>  
+ 
+<div class="layui-carousel" id="pics">
+  <div carousel-item="" class="pics-box">
+    <div><img height="440px" src="../text/images/gl1.jpg"></div>
+    <div><img height="440px" src="../text/images/gl2.jpg"></div>
+    <div><img height="440px" src="../text/images/gl3.jpg"></div>
+    <div><img height="440px" src="../text/images/gl4.jpg"></div>
+    <div><img height="440px" src="../text/images/gl5.jpg"></div>
+  </div>
+</div>
+ 
+          
+<script src="../../js/layui2.1.5/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  
+  //图片轮播
+  carousel.render({
+    elem: '#pics'
+    ,width: '778px'
+    ,height: '440px'
+    ,interval: 3000
+  });
+
+});
+</script>
+
+</body>
+</html>
