@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>文字排版样例1</title>
+	<link rel="stylesheet" href="../../js/layui2.1.5/css/layui.css"  media="all">
 	<style type="text/css">
 		*{
 			padding:0;
@@ -48,7 +49,30 @@
 			/*为了使tr的border生效 需要设置border-collapse*/
 			border-collapse: collapse;
 		}
+
+		.pics-box>div{
+	      text-align: center;
+	    }
+
+	    #pics{
+	    	margin-top: 30px;
+	    }
+
+	    h1{
+	    	font-size: 2em;
+	    	font-weight: bold;
+	    }
+	    h2{
+	    	font-size: 1.5em;
+	    	font-weight: bold;
+	    }
+	    h3{
+	    	font-size: 1.17em;
+	    	font-weight: bold;
+	    }
 	</style>
+	
+
 </head>
 <body>
 	<div class="box">
@@ -90,6 +114,15 @@
 				</tr>
 
 			</table>
+			<div class="layui-carousel" id="pics">
+			  <div carousel-item="" class="pics-box">
+			    <div><img height="440px" src="../text/images/gl1.jpg"></div>
+			    <div><img height="440px" src="../text/images/gl2.jpg"></div>
+			    <div><img height="440px" src="../text/images/gl3.jpg"></div>
+			    <div><img height="440px" src="../text/images/gl4.jpg"></div>
+			    <div><img height="440px" src="../text/images/gl5.jpg"></div>
+			  </div>
+			</div>
 
 			<h2>简介</h2>
 			<p>
@@ -100,6 +133,7 @@
 			<h3>
 				大浪河
 			</h3>
+			<img src="../text/images/dlh.jpg">
 			<p>
 				大浪河位于深圳市中北部宝安区大浪街道，龙华河的一级支流，观澜河的二级支流河，发源于简坑岭，由北向南由北经新围、大浪村、老围村，在狮头岭村委附近汇入龙华河后注入到观澜河。
 			</p>
@@ -113,6 +147,7 @@
 			<h3>
 				民治河
 			</h3>
+			<img src="../text/images/mzh.jpg">
 			<p>
 				民治河（游松河）位于深圳市中北部宝安区龙华境内，观澜河的上游支流，发源地为大脑壳山。河流上游有民乐、雅宝、民治三座水库以及支流牛咀水有牛咀水库，民乐、雅宝水库在民治水库集雨面积范围内，其泄洪均泄入民治水库，现状民治河起点接民治水库溢洪道，然后流向基本从南向北，穿过民和路、民康路、平南铁路，然后有支流牛咀水、樟坑水汇入，再穿过布龙公路、工业东路，终点河口位于下游松村北侧，与坂田河合流后汇入观澜河。
 			</p>
@@ -126,6 +161,7 @@
 			<h3>
 				樟坑径河
 			</h3>
+			<img src="../text/images/zkjh.jpg">
 			<p>
 				樟坑径河流域位于深圳市北部，是观澜河的一级支流。其发源于雷公山顶，樟坑径河现在起点位于宝安区观澜街道樟坑径水库溢洪道，在赤花岭有其支流横坑水汇入。从上游开始依次流经樟坑径居民小组、新田居民小组、松元居民小组、桂花居民小组，然后汇入观澜河。
 			</p>
@@ -139,6 +175,7 @@
 			<h3>
 				牛湖水
 			</h3>
+			<img src="../text/images/nhs.jpg">
 			<p>
 				牛湖水属于观澜河流域，源头为石马径水库，由南向北穿越高尔夫大道、裕新路，流经大水田村以后，汇入东莞境内观澜河的下游石马河。
 			</p>
@@ -172,4 +209,20 @@
 	</div>
 
 </body>
+<script src="../../js/layui2.1.5/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  
+  //图片轮播
+  carousel.render({
+    elem: '#pics'
+    ,width: '1060px'
+    ,height: '440px'
+    ,interval: 3000
+  });
+
+});
+</script>
 </html>
