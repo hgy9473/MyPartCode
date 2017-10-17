@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文字阴影试验</title>
+	<link rel="stylesheet" type="text/css" href="../../js/prism/prism.css">
+	<script type="text/javascript" src="../../js/prism/prism.js"></script>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: center;
+		}
+
+		.box{
+			width:900px;
+			padding:20px;
+			background: #faf0d9;
+		}
+
+		.shadow01{
+			background: white;
+			font-size: 3em;
+			font-weight: bold;
+			text-shadow: 2px 2px  4px #000;
+			padding:10px;
+			font-family: "宋体","楷体";
+		}
+
+		.shadow02{
+			background: white;
+			font-size: 3em;
+			font-weight: bold;
+			text-shadow: 0px 0px  8px #000;
+			padding:10px;
+			font-family: "宋体","楷体";
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>CSS 3 text-shadow 试验</h1>
+		<h2>语法: text-shadow: h-shadow(水平阴影偏移) v-shadow(垂直阴影偏移) blur(模糊距离) color;</h2>
+
+		<h2>试验 1</h2>
+		<h3>CSS 源码</h3>
+<pre><code class="language-css">
+.shadow01{
+	background: white;
+	font-size: 3em;
+	font-weight: bold;
+	text-shadow: 2px 2px  4px #000;
+	padding:10px;
+	font-family: "宋体","楷体";
+}
+</code></pre>
+		<h3>效果</h3>
+		<div class="shadow01">
+			试验而已哟 ：How R U
+		</div>
+
+
+		<h2>试验 2</h2>
+		<h3>CSS 源码</h3>
+<pre><code class="language-css">
+.shadow02{
+	background: white;
+	font-size: 3em;
+	font-weight: bold;
+	text-shadow: 0px 0px  8px #000;
+	padding:10px;
+	font-family: "宋体","楷体";
+	color:white;
+}
+</code></pre>
+		<h3>效果</h3>
+		<div class="shadow02">
+			试验而已哟 ：How R U
+		</div>
+	</div>
+</body>
+</html>
