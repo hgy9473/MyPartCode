@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>盒子阴影试验</title>
+	<link rel="stylesheet" type="text/css" href="../../js/prism/prism.css">
+	<script type="text/javascript" src="../../js/prism/prism.js"></script>
+	<style type="text/css">
+		
+		body{
+			display: flex;
+			justify-content: center;
+		}
+
+		.box{
+			width:900px;
+			padding:20px;
+			background: #faf0d9;
+		}
+
+		.shadow01{
+			width:600px;
+			box-shadow: 5px 5px 3px #333;
+			background: white;
+		}
+
+		.shadow02{
+			width:600px;
+			box-shadow: 5px 5px 15px #333 inset;
+			background: white;
+		}
+
+		.shadow03{
+			width:600px;
+			box-shadow:  0 1px 10px #000 /*设置边框外阴影*/,  
+						0 0 20px #000 inset/*设置边框内阴影*/;
+			background: white;
+		}
+
+		.shadow04{
+			width: 600px;
+			background: white;
+			box-shadow:0 15px 10px -10px #000 /*下边框阴影*/,
+						0 1px 4px #000 /*四边阴影*/,
+						0 0 10px #000 inset /*内边框阴影*/;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>CSS3 box-shadow 试验</h1>
+		<h2>语法：box-shadow: h-shadow(水平移动) v-shadow(垂直移动) blur(模糊距离) spread(阴影大小) color inset（或outset）;</h2>
+		<h2>试验 1</h2>
+		<h3>CSS 源码</h3>
+<pre><code class="language-css">
+.shadow01{
+	width:600px;
+	box-shadow: 5px 5px 3px #333;
+	background:white;
+}</code></pre>
+		<h3>效果</h3>
+		<div class="shadow01">
+			什么是 AJAX ？
+			AJAX = 异步 JavaScript 和 XML。
+			AJAX 是一种用于创建快速动态网页的技术。
+			通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+			传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+		</div>
+
+		<h2>试验 2</h2>
+		<h3>CSS 源码</h3>
+<pre><code class="language-css">
+.shadow02{
+	width:600px;
+	box-shadow: 5px 5px 15px #333 inset;
+	background:white;
+}</code></pre>
+		<h3>效果</h3>
+		<div class="shadow02">
+			什么是 AJAX ？
+			AJAX = 异步 JavaScript 和 XML。
+			AJAX 是一种用于创建快速动态网页的技术。
+			通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+			传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+		</div>
+		<h2>试验 3</h2>
+		<h3> CSS 源码</h3>
+<pre><code class="language-css">
+	.shadow03{
+			width:600px;
+			box-shadow:  0 1px 10px #000 /*设置边框外阴影*/,  
+				0 0 20px #000 inset/*设置边框内阴影*/;
+			background: white;
+	}
+
+</code></pre>
+		<h3>效果</h3>
+		<div class="shadow03">
+			什么是 AJAX ？
+			AJAX = 异步 JavaScript 和 XML。
+			AJAX 是一种用于创建快速动态网页的技术。
+			通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+			传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+		</div>
+
+		<h2>试验 4</h2>
+		<h3>CSS 源码</h3>
+<pre><code class="language-css">
+.shadow04{
+	width: 600px;
+	background: white;
+	box-shadow:0 15px 10px -10px #000 /*下边框阴影*/,
+				0 1px 4px #000 /*四边阴影*/,
+				0 0 10px #000 inset /*内边框阴影*/;
+}
+</code></pre>
+		<h3>效果</h3>
+		<div class="shadow04">
+			什么是 AJAX ？
+			AJAX = 异步 JavaScript 和 XML。
+			AJAX 是一种用于创建快速动态网页的技术。
+			通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+			传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+		</div>
+
+	</div>
+</body>
+</html>
