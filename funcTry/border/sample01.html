@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>border-radius 试验</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../js/prism/prism.css">
+	<script type="text/javascript" src="../../js/prism/prism.js"></script>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: center;
+		}
+
+		.box{
+			width:900px;
+			padding:20px;
+			background: #EFD8A4;
+		}
+
+		.border01{
+			width:400px;
+			height:300px;
+			border: 2px solid #000;
+			border-radius: 15px;
+		}
+
+		.border02{
+			width:400px;
+			height:300px;
+			border: 2px solid #000;
+			border-radius: 15px 100px;
+		}
+
+		.border03{
+			width:400px;
+			height:300px;
+			border: 2px solid #000;
+			border-radius: 15px 50px 100px;
+		}
+
+		.border04{
+			width:400px;
+			height:300px;
+			border: 2px solid #000;
+			border-radius: 15px 40px 75px 140px;
+		}
+
+		.border05{
+			width:400px;
+			height:300px;
+			border: 2px solid #000;
+			border-top-left-radius: 180px 50px;
+			border-top-right-radius: 180px 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>border-radius 测试</h1>
+		<h2>语法: border-radius: 1-4 length|% / 1-4 length|%;</h2>
+		<h2>测试 1</h2>
+		<h3>CSS 源码</h3>
+		<pre><code class="language-css">
+.border01{
+	width:400px;
+	height:300px;
+	border: 2px solid #000;
+	border-radius: 15px;
+}
+		</code></pre>
+		<h3>效果</h3>
+		<div class="border01">
+			
+		</div>
+
+
+
+		<h2>测试 2</h2>
+		<h3>CSS 源码</h3>
+		<pre><code class="language-css">
+.border02{
+	width:400px;
+	height:300px;
+	border: 2px solid #000;
+	border-radius: 15px 100px;
+}
+		</code></pre>
+		<h3>效果</h3>
+		<div class="border02">
+			
+		</div>
+
+
+		<h2>测试 3</h2>
+		<h3>CSS 源码</h3>
+		<pre><code class="language-css">
+.border03{
+	width:400px;
+	height:300px;
+	border: 2px solid #000;
+	border-radius: 15px 50px 100px;
+}
+		</code></pre>
+		<h3>效果</h3>
+		<div class="border03">
+			
+		</div>
+
+
+		<h2>测试 4</h2>
+		<h3>CSS 源码</h3>
+		<pre><code class="language-css">
+.border04{
+	width:400px;
+	height:300px;
+	border: 2px solid #000;
+	border-radius: 15px 40px 75px 140px;
+}
+		</code></pre>
+		<h3>效果</h3>
+		<div class="border04">
+			
+		</div>
+
+
+		<h2>测试 5</h2>
+		<h3>CSS 源码</h3>
+		<pre><code class="language-css">
+.border05{
+	width:400px;
+	height:300px;
+	border: 2px solid #000;
+	border-top-left-radius: 180px 50px;
+	border-top-right-radius: 180px 50px;
+}
+		</code></pre>
+		<h3>效果</h3>
+		<div class="border05">
+			
+		</div>
+
+	</div>
+</body>
+</html>
