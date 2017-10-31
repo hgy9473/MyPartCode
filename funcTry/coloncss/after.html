@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS::after试验</title>
+    <link rel="stylesheet" href="../../js/prism/prism.css">
+    <script src="../../js/prism/prism.js"></script>
+    <style>
+        html{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-image: linear-gradient(to top, #d7d2cc 0%, #304352 100%);
+        }
+        body{
+            width:900px;
+            background:#f5f5f5;
+            padding:20px;
+        }
+
+        /* 简单的:after样式 */
+        .boring-text::after {
+            content:    "<- 无聊!";
+            color:      red;
+        }
+
+        /* 复杂的:after样式 */
+        .exciting-text::after {
+            content: "<- 忍俊不禁!"; 
+            color: green;
+            display: block;
+            background:pink;
+            height:100px;
+            font-size:2em;
+            border-radius: 20px;
+            border:2px solid red;
+            box-shadow: 5px 5px 4px #333;
+        }
+
+        /* after 联合 hover */
+        span[data-descr] {
+            position: relative;
+            font-family: 楷体;
+            font-size:1.2em;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        span[data-descr]:hover::after {
+            content: attr(data-descr);
+            position: absolute;
+            left: 0;
+            top: 24px;
+            min-width: 10px;
+            text-align: center;
+            border: 1px #aaaaaa solid;
+            border-radius: 10px;
+            background-color: #ffffcc;
+            padding: 12px;
+            color: #000000;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        .box{
+            position: relative;
+            height:100px;
+            width:600px;
+            background:#f3c3d2;
+        }
+
+        .box:after{
+            content:'';
+            display: block;
+            height:1px;
+            width:100%;
+            background:red;
+            position: absolute;
+            right:0px;
+            bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS :after试验</h1>
+    <hr>
+    <h3>试验1 -- 添加文字</h3>
+    <h4>源码</h4>
+<pre><code class="language-css">
+/* 简单的:after样式 */
+.boring-text::after {
+    content:    "<- 无聊!";
+    color:      red;
+}
+</code></pre>
+
+    <h4>效果</h4>
+    <p class="boring-text">天若有情天亦老</p>
+    <p>人间正道是沧桑</p>
+
+
+    <hr>
+    <h3>试验2 -- 创建一个大空间</h3>
+    <h4>源码</h4>
+<pre><code class="language-css">
+/* 复杂的:after样式 */
+.exciting-text::after {
+    content: "<- 忍俊不禁!"; 
+    color: green;
+    display: block;
+    background:pink;
+    height:100px;
+    font-size:2em;
+    border-radius: 20px;
+    border:2px solid red;
+    box-shadow: 5px 5px 4px #333;
+}
+</code></pre>
+    
+    <h4>效果</h4>
+    <p class="exciting-text">匹夫无罪怀璧其罪</p>
+
+
+    <hr>
+    <h3>试验3 -- 配合hover实现文字提示</h3>
+    <h4>源码</h4>
+<pre><code class="language-css">
+/* after 联合 hover */
+span[data-descr] {
+    position: relative;
+    font-family: 楷体;
+    font-size:1.2em;
+    font-weight: bold;
+    cursor: help;
+}
+
+span[data-descr]:hover::after {
+    content: attr(data-descr);
+    position: absolute;
+    left: 0;
+    top: 24px;
+    min-width: 10px;
+    text-align: center;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 24px;
+    z-index: 10;
+}
+</code></pre>
+
+    <h4>效果</h4>
+    <p><span data-descr="云雾缭绕">云横</span>秦岭家何在<br />
+    </p>
+    <p>雪<span data-descr="堆积">拥</span>蓝关马不前</p>
+
+    <hr>
+    <h3>试验4 -- 实现添加边框</h3>
+    <h4>源码</h4>
+<pre><code class="language-css">
+.box{
+    position: relative;
+    height:100px;
+    width:600px;
+    background:#f3c3d2;
+}
+
+.box:after{
+    content:'';
+    display: block;
+    height:1px;
+    width:100%;
+    background:red;
+    position: absolute;
+    right:0px;
+    bottom: 0px;
+}    
+</code></pre>
+
+    <h4>效果</h4>
+    <div class="box">
+    </div>
+
+    <hr>
+    <p>（完）</p>
+</body>
+</html>
