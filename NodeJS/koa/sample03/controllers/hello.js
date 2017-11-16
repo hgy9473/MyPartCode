@@ -1,6 +1,6 @@
-var fn_hello = (ctx, next) => {
+var fn_hello = async (ctx, next) => {
     var name = ctx.params.name;
-    ctx.response.body = `<h1>Hello, ${name}!</h1>`;
+    ctx.response.body = `<h1>你好, ${name}!</h1>`;
 };
 
 module.exports = {
