@@ -6,7 +6,7 @@
 
 ## package.json
 > 项目配置描述
-```json
+```javascript
 {
     "name": "hello-koa2",
     "version": "1.0.0",
